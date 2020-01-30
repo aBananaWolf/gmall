@@ -1,10 +1,8 @@
 package cn.com.gmall.beans;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 public class PmsBaseCatalog2 implements Serializable {
 
@@ -16,6 +14,16 @@ public class PmsBaseCatalog2 implements Serializable {
     @Column
     private Long catalog1Id;
 
+    @Transient
+    private List<PmsBaseCatalog3> pmsBaseCatalog3List;
+
+    public List<PmsBaseCatalog3> getPmsBaseCatalog3List() {
+        return pmsBaseCatalog3List;
+    }
+
+    public void setPmsBaseCatalog3List(List<PmsBaseCatalog3> pmsBaseCatalog3List) {
+        this.pmsBaseCatalog3List = pmsBaseCatalog3List;
+    }
 
     public Long getId() {
         return id;

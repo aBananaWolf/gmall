@@ -1,9 +1,8 @@
 package cn.com.gmall.user.controller;
 
 import cn.com.gmall.beans.UmsMember;
-import cn.com.gmall.user.service.MemberService;
+import cn.com.gmall.service.user.MemberService;
 import org.apache.dubbo.config.annotation.Reference;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
