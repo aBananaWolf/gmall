@@ -12,7 +12,7 @@ public class PmsProductImage implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
-    private Long productId;
+    private Long spuId;
     @Column
     private String imgName;
     @Column
@@ -27,15 +27,13 @@ public class PmsProductImage implements Serializable {
         this.id = id;
     }
 
-
-    public Long getProductId() {
-        return productId;
+    public Long getSpuId() {
+        return spuId;
     }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
+    public void setSpuId(Long spuId) {
+        this.spuId = spuId;
     }
-
 
     public String getImgName() {
         return imgName;

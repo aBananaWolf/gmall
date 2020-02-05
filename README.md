@@ -5,3 +5,5 @@ zookeeper: 192.168.133.129:2181
 
 gmall-manage-service manage.gmall.com:8003
 gmall-manage-web manage.gmall.com:8004
+
+gmall-manage-web item.gmall.com:8005

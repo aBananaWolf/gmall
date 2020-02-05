@@ -12,7 +12,7 @@ public class PmsProductVertifyRecord implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
-    private Long productId;
+    private Long spuId;
     @Column
     private java.sql.Timestamp createTime;
     @Column
@@ -31,15 +31,13 @@ public class PmsProductVertifyRecord implements Serializable {
         this.id = id;
     }
 
-
-    public Long getProductId() {
-        return productId;
+    public Long getSpuId() {
+        return spuId;
     }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
+    public void setSpuId(Long spuId) {
+        this.spuId = spuId;
     }
-
 
     public java.sql.Timestamp getCreateTime() {
         return createTime;

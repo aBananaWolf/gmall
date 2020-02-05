@@ -1,6 +1,6 @@
 dubbo:
   provider:
-    timeout: 30000
+    timeout: 120000
   protocol:
     name: dubbo
     port: 20880
@@ -12,3 +12,7 @@ dubbo:
     protocol: zookeeper
   application:
     name: gmall-manage-service
+
+
+
+

@@ -2,11 +2,13 @@ package cn.com.gmall.service.manage;
 
 import cn.com.gmall.beans.PmsBaseAttrInfo;
 import cn.com.gmall.beans.PmsBaseAttrValue;
+import cn.com.gmall.beans.PmsBaseSaleAttr;
+import cn.com.gmall.beans.PmsProductInfo;
 
 import java.util.List;
 
 public interface BaseAttrService {
-    List<PmsBaseAttrInfo> attrInfoList(Integer catalog3Id);
+    List<PmsBaseAttrInfo> getAttrInfoList(Integer catalog3Id);
 
     /**
      * 修改或保存一个info

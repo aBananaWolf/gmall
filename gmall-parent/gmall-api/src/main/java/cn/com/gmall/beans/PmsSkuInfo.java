@@ -1,10 +1,8 @@
 package cn.com.gmall.beans;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 public class PmsSkuInfo implements Serializable {
 
@@ -12,7 +10,7 @@ public class PmsSkuInfo implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
-    private Long productId;
+    private Long spuId;
     @Column
     private java.math.BigDecimal price;
     @Column
@@ -28,6 +26,36 @@ public class PmsSkuInfo implements Serializable {
     @Column
     private String skuDefaultImg;
 
+    @Transient
+    private List<PmsSkuAttrValue> skuAttrValueList;
+    @Transient
+    private List<PmsSkuSaleAttrValue> skuSaleAttrValueList;
+    @Transient
+    private List<PmsSkuImage> skuImageList;
+
+    public List<PmsSkuImage> getSkuImageList() {
+        return skuImageList;
+    }
+
+    public void setSkuImageList(List<PmsSkuImage> skuImageList) {
+        this.skuImageList = skuImageList;
+    }
+
+    public List<PmsSkuAttrValue> getSkuAttrValueList() {
+        return skuAttrValueList;
+    }
+
+    public void setSkuAttrValueList(List<PmsSkuAttrValue> skuAttrValueList) {
+        this.skuAttrValueList = skuAttrValueList;
+    }
+
+    public List<PmsSkuSaleAttrValue> getSkuSaleAttrValueList() {
+        return skuSaleAttrValueList;
+    }
+
+    public void setSkuSaleAttrValueList(List<PmsSkuSaleAttrValue> skuSaleAttrValueList) {
+        this.skuSaleAttrValueList = skuSaleAttrValueList;
+    }
 
     public Long getId() {
         return id;
@@ -37,15 +65,13 @@ public class PmsSkuInfo implements Serializable {
         this.id = id;
     }
 
-
-    public Long getProductId() {
-        return productId;
+    public Long getSpuId() {
+        return spuId;
     }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
+    public void setSpuId(Long spuId) {
+        this.spuId = spuId;
     }
-
 
     public java.math.BigDecimal getPrice() {
         return price;
@@ -108,5 +134,7 @@ public class PmsSkuInfo implements Serializable {
     public void setSkuDefaultImg(String skuDefaultImg) {
         this.skuDefaultImg = skuDefaultImg;
     }
+
+
 
 }

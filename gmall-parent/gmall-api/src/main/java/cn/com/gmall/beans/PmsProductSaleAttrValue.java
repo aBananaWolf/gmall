@@ -1,9 +1,6 @@
 package cn.com.gmall.beans;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 public class PmsProductSaleAttrValue implements Serializable {
@@ -12,12 +9,22 @@ public class PmsProductSaleAttrValue implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
-    private Long productId;
+    private Long spuId;
     @Column
     private Long saleAttrId;
     @Column
     private String saleAttrValueName;
 
+    @Transient
+    private int isChecked;
+
+    public int getIsChecked() {
+        return isChecked;
+    }
+
+    public void setIsChecked(int isChecked) {
+        this.isChecked = isChecked;
+    }
 
     public Long getId() {
         return id;
@@ -27,15 +34,13 @@ public class PmsProductSaleAttrValue implements Serializable {
         this.id = id;
     }
 
-
-    public Long getProductId() {
-        return productId;
+    public Long getSpuId() {
+        return spuId;
     }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
+    public void setSpuId(Long spuId) {
+        this.spuId = spuId;
     }
-
 
     public Long getSaleAttrId() {
         return saleAttrId;

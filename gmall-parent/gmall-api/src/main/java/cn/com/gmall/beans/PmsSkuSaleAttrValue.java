@@ -1,9 +1,6 @@
 package cn.com.gmall.beans;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 public class PmsSkuSaleAttrValue implements Serializable {
@@ -21,7 +18,6 @@ public class PmsSkuSaleAttrValue implements Serializable {
     private String saleAttrName;
     @Column
     private String saleAttrValueName;
-
 
     public Long getId() {
         return id;

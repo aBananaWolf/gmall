@@ -1,10 +1,8 @@
 package cn.com.gmall.beans;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 public class PmsProductInfo implements Serializable {
 
@@ -12,7 +10,7 @@ public class PmsProductInfo implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
-    private String productName;
+    private String spuName;
     @Column
     private String description;
     @Column
@@ -20,6 +18,27 @@ public class PmsProductInfo implements Serializable {
     @Column
     private Long tmId;
 
+    @Transient
+    private List<PmsProductImage> spuImageList;
+
+    @Transient
+    private List<PmsProductSaleAttr> spuSaleAttrList;
+
+    public List<PmsProductImage> getSpuImageList() {
+        return spuImageList;
+    }
+
+    public void setSpuImageList(List<PmsProductImage> spuImageList) {
+        this.spuImageList = spuImageList;
+    }
+
+    public List<PmsProductSaleAttr> getSpuSaleAttrList() {
+        return spuSaleAttrList;
+    }
+
+    public void setSpuSaleAttrList(List<PmsProductSaleAttr> spuSaleAttrList) {
+        this.spuSaleAttrList = spuSaleAttrList;
+    }
 
     public Long getId() {
         return id;
@@ -29,15 +48,13 @@ public class PmsProductInfo implements Serializable {
         this.id = id;
     }
 
-
-    public String getProductName() {
-        return productName;
+    public String getSpuName() {
+        return spuName;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setSpuName(String spuName) {
+        this.spuName = spuName;
     }
-
 
     public String getDescription() {
         return description;
