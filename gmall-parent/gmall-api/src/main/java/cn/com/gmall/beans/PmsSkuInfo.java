@@ -32,6 +32,16 @@ public class PmsSkuInfo implements Serializable {
     private List<PmsSkuSaleAttrValue> skuSaleAttrValueList;
     @Transient
     private List<PmsSkuImage> skuImageList;
+    @Transient
+    private List<PmsProductSaleAttr> spuSaleAttrListCheckBySku;
+
+    public List<PmsProductSaleAttr> getSpuSaleAttrListCheckBySku() {
+        return spuSaleAttrListCheckBySku;
+    }
+
+    public void setSpuSaleAttrListCheckBySku(List<PmsProductSaleAttr> spuSaleAttrListCheckBySku) {
+        this.spuSaleAttrListCheckBySku = spuSaleAttrListCheckBySku;
+    }
 
     public List<PmsSkuImage> getSkuImageList() {
         return skuImageList;

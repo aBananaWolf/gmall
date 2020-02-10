@@ -2,7 +2,7 @@ package cn.com.gmall.user.service.impl;
 
 import cn.com.gmall.beans.UmsMemberReceiveAddress;
 import cn.com.gmall.user.mapper.MemberReceiveAddressMapper;
-import cn.com.gmall.service.user.MemberReceiveAddressService;
+import cn.com.gmall.manage.service.user.MemberReceiveAddressService;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.entity.Example;

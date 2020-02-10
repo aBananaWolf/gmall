@@ -2,7 +2,7 @@ package cn.com.gmall.user.service.impl;
 
 import cn.com.gmall.beans.UmsMember;
 import cn.com.gmall.user.mapper.MemberMapper;
-import cn.com.gmall.service.user.MemberService;
+import cn.com.gmall.manage.service.user.MemberService;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 

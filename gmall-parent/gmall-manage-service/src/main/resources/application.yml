@@ -13,6 +13,22 @@ dubbo:
   application:
     name: gmall-manage-service
 
+jedis-util:
+  host: 192.168.133.129
+  port: 6379
+  password:
+  time-out: 10000
+  max-wait-millis: 10000
+  max-idle: 12
+  max-total: 5
+  test-on-return: true
+  test-on-borrow: true
+  test-while-idle: true
+  block-when-exhausted: true
+
+
+
+
 
 
 

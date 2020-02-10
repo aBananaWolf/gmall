@@ -232,13 +232,13 @@
                             <dd th:class="(${saleAttrValue.isChecked}==0)?'':'redborder'"
                                 th:each="saleAttrValue,iterStat:${spuSaleAttrListCheckBySku2.spuSaleAttrValueList}">
                                 <div th:value="${saleAttrValue.id}" >
-									<img th:src="${allSkuDefaultImg[iterStat.index]}" th:text="${saleAttrValue.saleAttrValueName}" width="50" height="50"/>
+									<img th:src="${firstLineImg[iterStat.index]}" th:text="${saleAttrValue.saleAttrValueName}" width="50" height="50"/>
                                 </div>
 
                             </dd>
                     </div>
                     </dl>
-                    <input type="hidden" th:value="${saleHash}" id="saleHash"/>
+                    <input type="hidden" th:value="${skuHash}" id="skuHash"/>
                     <div class="box-attr-2 clear" th:each="spuSaleAttr,iterstat:${spuSaleAttrListCheckBySku}">
                         <dl>
                             <dt th:text="${spuSaleAttr.saleAttrName}">选择颜色</dt>
@@ -1061,13 +1061,13 @@
     }
 
     function switchSkuId() {
-        var saleHashStr = $("#saleHash").val();
-        // alert(saleHashStr);
-        var saleHash = JSON.parse(saleHashStr);
+        var skuHashStr = $("#skuHash").val();
+        // alert(skuHashStr);
+        var skuHash = JSON.parse(skuHashStr);
 
         var itemSaleAttrValueIds = $(".redborder div");//redborder
         var k = "";
-        var index = parseInt($("#saleChecked").val(),10);
+        var index = parseInt($("#level").val(),10);
         $(itemSaleAttrValueIds).each(function (i, obj) {
             k += $(obj).attr("value") + "|";
         });
@@ -1079,15 +1079,15 @@
 		}
 
         var skuIdSelf = $("#skuId").val();
-        if (saleHash[finalValue] !== undefined) {
-        	if(skuIdSelf === saleHash[finalValue]){
+        if (skuHash[finalValue] !== undefined) {
+        	if(skuIdSelf === skuHash[finalValue]){
 			}else{
-				location.href = "http://item.gmall.com:8005/" + saleHash[finalValue] + ".html";
+				location.href = "http://item.gmall.com:8005/" + skuHash[finalValue] + ".html";
 			}
 
         }
 	}
 
 </script>
-<input id="saleChecked" type="hidden" th:value="${checked}">
+<input id="level" type="hidden" th:value="${level}">
 </html>
