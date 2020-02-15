@@ -160,6 +160,19 @@ public class SkuServiceImpl implements SkuService {
         }
         return itemSaleHashPackage;
     }
+
+    @Override
+    public List<PmsSkuInfo> getAllSkuInfo() {
+        List<PmsSkuInfo> pmsSkuInfos = infoMapper.selectAll();
+        for (PmsSkuInfo pmsSkuInfo : pmsSkuInfos) {
+            Example example = new Example(PmsSkuSaleAttrValue.class);
+            example.createCriteria().andEqualTo("skuId",pmsSkuInfo.getId());
+            pmsSkuInfo.setSkuAttrValueList(attrValueMapper.selectByExample(example));
+        }
+        return pmsSkuInfos;
+    }
+
+
     public ItemSaleHashPackage getSaleAttrValueByHashFromDB(Long spuId) {
         List<PmsSkuInfo> saleHash = infoMapper.selectSaleAttrValueByHash(spuId);
         ItemSaleHashPackage itemSaleHashPackage = this.generateSkuHashAndImg(saleHash);

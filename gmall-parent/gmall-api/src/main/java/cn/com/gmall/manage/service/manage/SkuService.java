@@ -1,7 +1,6 @@
 package cn.com.gmall.manage.service.manage;
 
 import cn.com.gmall.beans.ItemSaleHashPackage;
-import cn.com.gmall.beans.PmsProductSaleAttr;
 import cn.com.gmall.beans.PmsSkuInfo;
 
 import java.util.List;
@@ -25,4 +24,5 @@ public interface SkuService {
      */
     ItemSaleHashPackage getItemSaleHashPackageBySpuId(Long spuId);
 
+    List<PmsSkuInfo> getAllSkuInfo();
 }
